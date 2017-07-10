@@ -16,6 +16,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should require login" do
+    logout
+    get products_url
+    follow_redirect!
+    assert_select 'legend', 'Please Log In'
+  end
+
   test "should get new" do
     get new_product_url
     assert_response :success
