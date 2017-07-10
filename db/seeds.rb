@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-class CreateProducts < ActiveRecord::Migration[5.2]
+class CreateProducts < ActiveRecord::Migration[5.1]
   def change
     create_table :products do |t|
       t.string :title
